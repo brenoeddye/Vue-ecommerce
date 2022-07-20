@@ -2,6 +2,7 @@
     background: transparent;
     border: 0;
     padding: 10px;
+    text-transform: uppercase;
     border-radius: 16px;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -26,13 +27,37 @@
     }
 }
 
+.remove {
+    background-color: $btn_remove;
+    padding: 15px 15px 12px 15px;
+    margin-right: 4px;
+
+    svg {
+        height: 15px;
+        width: 15px;
+    }
+
+    &:hover {
+        background-color: lighten($btn_remove, 10);
+    }
+}
+
 .buy {
     color: #fff;
-    text-transform: uppercase;
     background-color: $btn_buy;
     font-weight: bolder;
 
     &:hover {
         background-color: lighten($btn_buy, 20);
+    }
+}
+
+.goPay {
+    color: #fff;
+    background-color: $btn_pay;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: lighten($btn_pay, 20);
     }
 }

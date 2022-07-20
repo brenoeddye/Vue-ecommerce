@@ -14,6 +14,18 @@
         transition: all .2s ease-in-out;
     }
 
+    .inCart {
+        position: absolute;
+        right: 0;
+        border-bottom-left-radius: 16px;
+        border-top-right-radius: 16px;
+        text-transform: uppercase;
+        padding: 15px;
+        background-color: $inCart;
+        transition: all .2s ease-in-out;
+        z-index: 1;
+    }
+
     .infos {
         position: absolute;
         background-color: $item_color;
@@ -65,10 +77,12 @@
     }
 
     .buttons {
-        display: none;
+        opacity: 0;
+        display: flex;
         position: absolute;
         bottom: 100px;
         width: 100%;
+        transition: all .2s ease-in-out;
 
         .add {
             margin-right: 5px;
@@ -95,7 +109,11 @@
         }
 
         .buttons {
-            display: flex;
+            opacity: 1;
+        }
+
+        .inCart {
+            border-radius: 10px;
         }
     }
 }

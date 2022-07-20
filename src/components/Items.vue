@@ -7,14 +7,32 @@ export default {
         name: String,
         image: String,
         price: String,
-        hasDiscount: Boolean,
-        percent: String
+        percent: String,
+        hasDiscount: Boolean
+    },
+    data() {
+        return {
+            inCart: false
+        }
+    },
+    methods: {
+        removeCart() {
+            this.inCart--
+            this.$emit('remove')
+        },
+        addCart() {
+            this.inCart = !this.inCart
+            this.$emit('add')
+        }
     }
 }
 </script>
 
 <template>
     <div class="item">
+        <div v-if="inCart === true">
+            <div class="inCart">No Carrinho</div>
+        </div>
         <img :src="'src/assets/img/items/' + image + '.jpg'" alt="">
         <div class="infos">
             <div>
@@ -35,7 +53,12 @@ export default {
             </div>
         </div>
         <div class="buttons">
-            <button class="btn add"><Icon icon="cartPlus" /></button>
+            <div v-if="inCart === true" >
+                <button class="btn remove" @click="removeCart()"><Icon icon="remove" /></button>
+            </div>
+            <div v-else>
+                <button class="btn add" @click="addCart()"><Icon icon="cartPlus" /></button>
+            </div>
             <button class="btn buy">Comprar</button>
         </div>
     </div>

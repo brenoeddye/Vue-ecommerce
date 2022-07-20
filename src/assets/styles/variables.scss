@@ -5,10 +5,19 @@ $font_color: #fff;
 // Header
 $header_color: rgba(0,0,0, .4);
 
+    // Nav links
+    $tag: rgb(68, 191, 240);
+    $desktop: rgb(148, 68, 240);
+    $gamepad: rgb(240, 165, 68);
+    $mobile: rgb(240, 68, 91);
+    $plus: rgb(97, 240, 68);
+
 $content_color: #535363;
 
     // Cart
     $cart_color: #535363;
+    $badge_color: rgb(231, 53, 53);
+    $inCart: rgb(55, 138, 38);
 
 // Content
 
@@ -23,4 +32,6 @@ $footer_color: #292931;
 
 // Buttons
 $btn_add: rgb(55, 138, 38);
+$btn_pay: rgb(55, 138, 38);
+$btn_remove: rgb(231, 53, 53);
 $btn_buy: rgb(0,0,0);
