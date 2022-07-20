@@ -1,17 +1,28 @@
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import Icon from '../components/Icons.vue'
 import DynamicWall from '../components/DynamicWall.vue'
 import Product from '../components/Items.vue'
+import Items from '../components/Items.vue'
 
 export default {
-    components: { Icon, DynamicWall, Product },
+    components: { Icon, DynamicWall, Product, Items },
     data() {
         return {
             cart: false,
             count: 0
         }
     },
+    computed: {
+        ...mapGetters({
+            products: 'getGames'
+        })
+    },
     methods: {
+        ...mapActions([
+            'addProduct'
+        ]),
+
         closeCart() {
             return this.cart = false;
         },
@@ -22,8 +33,8 @@ export default {
 
         removeItem() {
             this.count--
-        }
-    }
+        },
+    },
 }
 </script>
 
@@ -46,7 +57,9 @@ export default {
                     <div v-if="cart === true" class="cart">
                         <div class="title" v-click-outside="closeCart" >
                             <h3>Seu carrinho</h3>
+                            <div>
 
+                            </div>
                             <button class="btn goPay">Finalizar Compra</button>
                         </div>
                     </div>
@@ -55,12 +68,12 @@ export default {
             </div>
         </div>
     </div>
-    <div class="container content">
-        <Product name="Cyberpunk 2077" image="cyber" price="179,90" percent="20" hasDiscount @add="addItem()" @remove="removeItem()" />
-        <Product name="Red Dead Redemption 2" image="reddead" price="209,90" percent="0" @add="addItem()" @remove="removeItem()" />
-        <Product name="FIFA 22" image="fifa22" price="249,90" percent="0" @add="addItem()" @remove="removeItem()" />
-        <Product name="Rainbow Six Siege" image="r6" price="149,90" percent="0" @add="addItem()" @remove="removeItem()" />
-        <Product name="TES V: Skyrim" image="skyrim" price="79,90" percent="60" hasDiscount @add="addItem()" @remove="removeItem()" />
+    <div class="container">
+        <ul class="content">
+            <li v-for="(product, index) in products" :key="index">
+                <Items :name="product.name" :image="product.image" :price="product.price" :percent="product.percent" />
+            </li>
+        </ul>
     </div>
     <footer>
         <div class="support_links">

@@ -1,4 +1,5 @@
 <script>
+import { mapActions } from 'vuex'
 import Icon from './Icons.vue'
 
 export default {
@@ -7,8 +8,7 @@ export default {
         name: String,
         image: String,
         price: String,
-        percent: String,
-        hasDiscount: Boolean
+        percent: String
     },
     data() {
         return {
@@ -16,6 +16,10 @@ export default {
         }
     },
     methods: {
+        ...mapActions([
+            'addProduct'
+        ]),
+
         removeCart() {
             this.inCart--
             this.$emit('remove')
@@ -33,7 +37,7 @@ export default {
         <div v-if="inCart === true">
             <div class="inCart">No Carrinho</div>
         </div>
-        <img :src="'src/assets/img/items/' + image + '.jpg'" alt="">
+        <img :src="image" alt="">
         <div class="infos">
             <div>
                 <span class="title">{{ name }}</span>
@@ -46,7 +50,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="hasDiscount === true">
+            <div v-if="percent > '0'">
                 <div class="percent">
                     {{ percent }} %
                 </div>
