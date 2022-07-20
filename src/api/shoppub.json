@@ -1,0 +1,68 @@
+{
+  "uuid": "4c38b138-564f-4a79-ab33-8dccef8fa854",
+  "lastMigration": 20,
+  "name": "Shoppub",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "e19a1928-4cc6-441f-a03f-3d856918e94c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "d36d4c41-ff65-4c13-a900-ca0514f622cd",
+          "body": "{\n  \"users\": {\n    \"Breno\",\n    \"Vinicius\"\n  },\n  \"password\": {\n    \"123456\"\n    \"1234\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

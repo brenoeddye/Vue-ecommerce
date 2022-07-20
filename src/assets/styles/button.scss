@@ -1,0 +1,38 @@
+.btn {
+    background: transparent;
+    border: 0;
+    padding: 10px;
+    border-radius: 16px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    svg {
+        fill: $font_color;
+        width: 25px;
+        height: 25px;
+    }
+
+    &:hover {
+        border-radius: 10px;
+    }
+}
+
+.add {
+    padding: 10px 10px 7px 8px;
+    background-color: $btn_add;
+
+    &:hover {
+        background-color: lighten($btn_add, 10);
+    }
+}
+
+.buy {
+    color: #fff;
+    text-transform: uppercase;
+    background-color: $btn_buy;
+    font-weight: bolder;
+
+    &:hover {
+        background-color: lighten($btn_buy, 20);
+    }
+}

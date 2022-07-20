@@ -1,0 +1,23 @@
+.dwall {
+    position: absolute;
+    width: 100%;
+    height: 840px;
+    top: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(255,0,0,0) 0%, $bg_color 100%);
+    }
+
+    img {
+        background-size: cover;
+        position: relative;
+    }
+}
