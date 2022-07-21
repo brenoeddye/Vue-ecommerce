@@ -132,18 +132,15 @@
         .quick_access {
             display: flex;
     
-            svg {
+            & .Clk {
                 height: 25px;
                 width: 25px;
                 fill: $font_color;
+                cursor: pointer;
     
                 &:first-child {
                     margin-right: 15px;
                 }
-            }
-
-            .Clk{
-                cursor: pointer;
             }
         }
     }

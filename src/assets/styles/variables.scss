@@ -2,6 +2,11 @@
 $bg_color: #3d3d4e;
 $font_color: #fff;
 
+// Misc
+$red: rgb(231, 53, 53);
+$green: rgb(55, 138, 38);
+$main_color: #535363;
+
 // Header
 $header_color: rgba(0,0,0, .4);
 
@@ -12,26 +17,30 @@ $header_color: rgba(0,0,0, .4);
     $mobile: rgb(240, 68, 91);
     $plus: rgb(97, 240, 68);
 
-$content_color: #535363;
+    // Login
+    $login_color: $main_color;
 
     // Cart
-    $cart_color: #535363;
-    $badge_color: rgb(231, 53, 53);
-    $inCart: rgb(55, 138, 38);
+    $cart_color: $main_color;
+    $badge_color: $red;
+    $inCart: $green;
 
 // Content
+$content_color: $main_color;
 
     // Item
     $item_color: rgba(0,0,0, .8);
-    $percent_color: rgb(231, 53, 53);
+    $percent_color: $red;
 
 // Footer
 $footer_color: #292931;
 
-// Misc
-
 // Buttons
-$btn_add: rgb(55, 138, 38);
-$btn_pay: rgb(55, 138, 38);
-$btn_remove: rgb(231, 53, 53);
+$btn_add: $green;
+$btn_pay: $green;
+$btn_remove: $red;
+$btn_enter: $green;
 $btn_buy: rgb(0,0,0);
+
+// Checkout 
+$checkout_color: $main_color;

@@ -3,7 +3,9 @@
 @import './dynamicwall.scss';
 @import './button.scss';
 @import './header.scss';
+@import './login.scss';
 @import './cart.scss';
+@import './checkout.scss';
 @import './footer.scss';
 
 body {
@@ -20,6 +22,11 @@ a {
 
 .container {
     max-width: 1000px;
+    margin: auto;
+}
+
+.container-mx {
+    max-width: 1300px;
     margin: auto;
 }
 

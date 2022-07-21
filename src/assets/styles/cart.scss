@@ -3,18 +3,37 @@
     background-color: $cart_color;
     top: 40px;
     right: 0;
-    width: 300px;
+    width: 350px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07),0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
+
+    .emptyCart {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
 
     .title {
         padding: 10px 20px;
         user-select: none;
     }
 
+    .total {
+        & span {
+            &:first-child {
+                float: left;
+            }
+
+            &:last-child {
+                float: right;
+            }
+        }   
+    }
+
     button {
+        margin: 5px 0 9px 0;
         width: 100%;
     }
 
@@ -29,6 +48,78 @@
         border-right: 10px solid transparent;
         border-bottom: 10px solid $cart_color;
     }
+}
+
+.miniItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid darken($cart_color, 5);
+    height: 90px;
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
+    img {
+        object-fit: cover;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        width: 70px;
+        height: 90px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .desc {
+        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+
+            &:first-child {
+                font-size: 12px;
+                margin: 5px 0;
+            }
+            
+            &:last-child {
+                font-weight: bolder;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 23%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(to right, rgba(255,0,0,0) 0%, $cart_color 100%);
+        }
+    }
+    
+    svg {
+        width: 10px;
+        height: 10px;
+        background-color: $red;
+        border-radius: 30px;
+        padding: 5px;
+        fill: $font_color;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 6px;
+            background-color: lighten($red, 20);
+        }
+    }
+
 }
 
 .cartSection {

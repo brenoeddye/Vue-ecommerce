@@ -7,7 +7,7 @@ export default {
     props: {
         name: String,
         image: String,
-        price: String,
+        price: Number,
         percent: String
     },
     data() {
@@ -21,11 +21,12 @@ export default {
         ]),
 
         removeCart() {
-            this.inCart--
+            this.inCart = false
             this.$emit('remove')
         },
+
         addCart() {
-            this.inCart = !this.inCart
+            this.inCart = true
             this.$emit('add')
         }
     }
@@ -42,7 +43,7 @@ export default {
             <div>
                 <span class="title">{{ name }}</span>
                 <div>
-                    <span class="price">R$ {{ price }}</span>
+                    <span class="price">R$ {{ price }},00</span>
                     <div class="badges">
                         <img src="../assets/img/xbox.jpg" />
                         <img src="../assets/img/sony.jpg" />

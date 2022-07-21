@@ -42,6 +42,15 @@
     }
 }
 
+.enter {
+    color: $font_color;
+    background-color: $btn_enter;
+
+    &:hover {
+        background-color: lighten($btn_enter, 10);
+    }
+}
+
 .buy {
     color: #fff;
     background-color: $btn_buy;
