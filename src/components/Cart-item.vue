@@ -14,7 +14,7 @@ export default {
 
 <template>
     <div class="miniItem">
-        <img :src="image">
+        <img :src="'../assets/items/'+ image +'.jpg'">
         <div class="desc">
             <span>{{ name }}</span>
             <span>R$ {{ price }},00</span>
