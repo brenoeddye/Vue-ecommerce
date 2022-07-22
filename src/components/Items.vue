@@ -38,7 +38,7 @@ export default {
         <div v-if="inCart === true">
             <div class="inCart">No Carrinho</div>
         </div>
-        <img :src="image" alt="">
+        <img :src="'../assets/items/'+ image +'.jpg'" alt="">
         <div class="infos">
             <div>
                 <span class="title">{{ name }}</span>

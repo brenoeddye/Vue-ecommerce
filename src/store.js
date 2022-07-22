@@ -10,37 +10,37 @@ export default createStore({
         {
             name: 'Cyberpunk 2077',
             price: 79,
-            image: 'src/assets/img/items/cyber.jpg',
+            image: 'cyber',
             percent: '20'
         },
         {
             name: 'Red Dead Redemption 2',
             price: 209,
-            image: 'src/assets/img/items/reddead.jpg',
+            image: 'reddead',
             percent: '0'
         },
         {
             name: 'FIFA 22',
             price: 249,
-            image: 'src/assets/img/items/fifa22.jpg',
+            image: 'fifa22',
             percent: '0'
         },
         {
             name: 'Rainbow Six Siege',
             price: 149,
-            image: 'src/assets/img/items/r6.jpg',
+            image: 'r6',
             percent: '0'
         },
         {
             name: 'TES V: Skyrim',
             price: 79,
-            image: 'src/assets/img/items/skyrim.jpg',
+            image: 'skyrim',
             percent: '60'
         },
         {
             name: 'Bomba Patch 22',
             price: 9,
-            image: 'src/assets/img/items/bomba.jpg',
+            image: 'bomba',
             percent: '0'
         }
     ],
