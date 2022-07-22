@@ -6,6 +6,7 @@ $font_color: #fff;
 $red: rgb(231, 53, 53);
 $green: rgb(55, 138, 38);
 $main_color: #535363;
+$blackout: rgba(0,0,0, .5);
 
 // Header
 $header_color: rgba(0,0,0, .4);
@@ -44,3 +45,6 @@ $btn_buy: rgb(0,0,0);
 
 // Checkout 
 $checkout_color: $main_color;
+
+// orderCreated
+$order_color: $main_color;

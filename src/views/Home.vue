@@ -2,13 +2,12 @@
 import { mapGetters, mapActions } from 'vuex'
 import Icon from '../components/Icons.vue'
 import DynamicWall from '../components/DynamicWall.vue'
-import Product from '../components/Items.vue'
 import Items from '../components/Items.vue'
 import CartItem from '../components/Cart-item.vue';
 import api from '../services/api'
 
 export default {
-    components: { Icon, DynamicWall, Product, Items, CartItem },
+    components: { Icon, DynamicWall, Items, CartItem },
     data() {
         return {
             cart: false,
@@ -18,18 +17,15 @@ export default {
                 email: '',
                 pass: ''
             },
-            isLogged: false,
-            error: '',
-            user: {
-                name: '',
-                pass: ''
-            }
+            error: ''
         }
     },
     computed: {
         ...mapGetters({
             products: 'getGames',
-            currentProduct: 'getCurrentProduct'
+            currentProduct: 'getCurrentProduct',
+            getName: 'getName',
+            isLogged: 'isLogged'
         }),
         ...mapGetters([
             'getCartProducts'
@@ -72,14 +68,14 @@ export default {
         },
 
         async getAuth(email, pass) {
-            console.log(email, pass)
             await api.get('/checkuser').then((res) => {
                 const user = res?.data
 
                 if(user.email == email && user.password == pass) {
-                    this.user.name = user.name
+                    this.getName = user.name
+                    this.$store.commit('SET_NAME', user.name);
+                    this.$store.commit('SET_USER', true);
                     this.isLogged = true
-                    console.log(this.isLogged)
                 } else this.error = '* Usuário não cadastrado ou senha errada!'
             })
         },
@@ -92,7 +88,7 @@ export default {
 
             if(!this.form.user || !this.form.pass)
                 this.error = '* Preencha todos os campos!'
-        }
+        },
     }
 }
 </script>
@@ -128,7 +124,7 @@ export default {
                                 <button class="btn enter" @click="checkForm()">Entrar</button>
                             </div>
                             <div v-if="isLogged === true">
-                                <h3>Olá, {{ user.name }}</h3>
+                                <h3>Olá, {{ getName }}</h3>
                             </div>
                         </div>
                     </div>

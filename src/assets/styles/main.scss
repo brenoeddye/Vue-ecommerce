@@ -7,6 +7,8 @@
 @import './cart.scss';
 @import './checkout.scss';
 @import './footer.scss';
+@import './orderCreated.scss';
+@import './address.scss';
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -44,5 +46,23 @@ a {
 
     li {
         display: block;
+    }
+}
+
+.advError {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: $red;
+    padding: 40px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    left: 40%;
+
+    .advRemove {
+        height: 25px;
+        width: 25px;
+        fill: $font_color;
+        margin-right: 30px;
     }
 }

@@ -6,7 +6,7 @@ export default {
     props: {
         name: String,
         image: String,
-        price: String,
+        price: Number,
         percent: String
     }
 }

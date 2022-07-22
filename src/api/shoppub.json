@@ -34,20 +34,25 @@
       "sequentialResponse": false
     },
     {
-      "uuid": "c271f85a-7be1-42b5-9fa6-30f78bcc241e",
+      "uuid": "3784d785-e1dd-434b-bcbf-1659d043b5e9",
       "documentation": "",
-      "method": "post",
+      "method": "get",
       "endpoint": "address",
       "responses": [
         {
-          "uuid": "eeaee0f0-1033-4780-bb45-b54ed6c4fb33",
-          "body": "{}",
+          "uuid": "4d90e986-d458-4ad0-9fec-3605aa51aadb",
+          "body": "{\n  \"address\": \"Av. Paulista\",\n  \"number\": \"1374\",\n  \"distric\": \"Bela Vista\",\n  \"cep\": \"01310-100\",\n  \"city\": \"São Paulo\",\n  \"state\": \"SP\"\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
-          "headers": [],
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
           "filePath": "",
-          "sendFileAsBody": false,
+          "sendFileAsBody": true,
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,

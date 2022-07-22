@@ -2,6 +2,10 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    user: {
+        name: '',
+        login: null
+    },
     games: [
         {
             name: 'Cyberpunk 2077',
@@ -47,31 +51,39 @@ export default createStore({
 
   mutations: {
     ADD_PRODUCT: (state, product) => {
-        state.cartProducts.push(product);
+        state.cartProducts.push(product)
     },
     REMOVE_PRODUCT: (state, index) => {
         state.cartProducts.splice(index, 1);
     },
     CURRENT_PRODUCT: (state, product) => {
-        state.currentProduct = product;
+        state.currentProduct = product
     },
+    SET_NAME: (state, name) => {
+        state.user.name = name
+    },
+    SET_USER: (state, user) => {
+        state.user.login = user
+    }
 },
 
   actions: {
     addProduct: (context, product) => {
-        context.commit('ADD_PRODUCT', product);
+        context.commit('ADD_PRODUCT', product)
     },
     removeProduct: (context, index) => {
-        context.commit('REMOVE_PRODUCT', index);
+        context.commit('REMOVE_PRODUCT', index)
     },
     currentProduct: (context, product) => {
-        context.commit('CURRENT_PRODUCT', product);
-    },
+        context.commit('CURRENT_PRODUCT', product)
+    }
 },
 
   getters: {
     getGames: state => state.games,
     getCartProducts: state => state.cartProducts,
-    getCurrentProduct: state => state.currentProduct
+    getCurrentProduct: state => state.currentProduct,
+    getName: state => state.user.name,
+    isLogged: state => state.user.login !== null
   }
 })
